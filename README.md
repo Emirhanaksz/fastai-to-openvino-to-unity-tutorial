@@ -81,3 +81,7 @@
 
 
 ## Tutorial Links
+
+* [Part 1](https://christianjmills.com/Fastai-to-OpenVINO-to-Unity-Tutorial-Windows-1/): Part 1 covers the required modifications to the training code from the fastai-to-unity tutorial.
+* [Part 2](https://christianjmills.com/Fastai-to-OpenVINO-to-Unity-Tutorial-Windows-2/): Part 2 covers creating a dynamic link library (DLL) file in Visual Studio to perform inference with OpenVINO.
+* [Part 3](https://christianjmills.com/Fastai-to-OpenVINO-to-Unity-Tutorial-Windows-3/): Part 3 covers modifying the Unity project from the fastai-to-unity tutorial to classify images with a OpenVINO DLL.
