@@ -1,2 +1,0 @@
-* text=auto
-torch_cpu.dll filter=lfs diff=lfs merge=lfs
