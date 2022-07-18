@@ -275,6 +275,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
     }
 
 
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
 #if !UNITY_EDITOR
@@ -559,8 +560,6 @@ public class ImageClassifierOpenVINO : MonoBehaviour
         };
 
         Debug.Log(return_messages[return_val]);
-        Debug.Log($"W: {inputDims[0]} H: {inputDims[1]}");
-
     }
 
     // OnGUI is called for rendering and handling GUI events.
