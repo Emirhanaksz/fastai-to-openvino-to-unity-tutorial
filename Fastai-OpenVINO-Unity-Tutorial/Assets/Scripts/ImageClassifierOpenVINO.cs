@@ -15,19 +15,24 @@ public class Startup
 {
     static Startup()
     {
+        // Get all files named "plugins.xml"
         string[] files = Directory.GetFiles("./Assets/", "plugins.xml", SearchOption.AllDirectories);
+        // Iterate through each found file
         foreach (string file in files)
         {
+            // Check if the file is in the "x86_64" folder
             if (file.Contains("x86_64"))
             {
+                // Define file path for StreamingAssets folder
                 string targetPath = $"{Application.streamingAssetsPath}/plugins.xml";
+                // Print the source file path
                 Debug.Log(file);
+                // Only copy the file to the StreamingAssets folder if it is not already present
                 if (!File.Exists(targetPath)) File.Copy(file, targetPath);
             }
         }
     }
 }
-
 #endif
 
 public class ImageClassifierOpenVINO : MonoBehaviour
@@ -80,7 +85,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
     public Dropdown webcamDropdown;
     [Tooltip("The dropdown menu that lists available OpenVINO models")]
     public Dropdown modelDropdown;
-    [Tooltip("")]
+    [Tooltip("The dropdown menu that lists available OpenVINO devices")]
     public Dropdown deviceDropdown;
 
     [Header("OpenVINO")]
@@ -121,7 +126,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
     private List<string> modelPaths = new List<string>();
     // Names of the available OpenVINO models
     private List<string> modelNames = new List<string>();
-
+    // Names of the available OpenVINO devices
     private List<string> openvinoDevices = new List<string>();
 
     // Name of the DLL file
@@ -207,7 +212,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
 
 
     /// <summary>
-    /// 
+    /// Get the names of the available OpenVINO devices
     /// </summary>
     private void GetOpenVINODevices()
     {
@@ -273,8 +278,11 @@ public class ImageClassifierOpenVINO : MonoBehaviour
     private void Awake()
     {
 #if !UNITY_EDITOR
+        // Define the path for the plugins.xml file in the StreamingAssets folder
         string sourcePath = $"{Application.streamingAssetsPath}/plugins.xml";
+        // Define the destination path for the plugins.xml file
         string targetPath = $"{Application.dataPath}/Plugins/x86_64/plugins.xml";
+        // Only copy the file if it is not already present at the destination
         if (!File.Exists(targetPath)) File.Copy(sourcePath, targetPath);
 #endif
     }
@@ -306,7 +314,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
 
         // Get the file paths for available OpenVINO models
         GetOpenVINOModels();
-        // 
+        // Get the names of available OpenVINO devices
         GetOpenVINODevices();
 
         // Initialize the webcam dropdown list
