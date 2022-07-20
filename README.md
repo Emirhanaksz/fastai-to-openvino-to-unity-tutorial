@@ -1,4 +1,4 @@
-# Fastai to OpenVINO to Unity Tutorial
+# Fastai → OpenVINO → Unity Tutorial
  This follow-up to the [fastai-to-unity](https://github.com/cj-mills/fastai-to-unity-tutorial)  covers creating an [OpenVINO](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) plugin for the Unity game engine.
 
 
