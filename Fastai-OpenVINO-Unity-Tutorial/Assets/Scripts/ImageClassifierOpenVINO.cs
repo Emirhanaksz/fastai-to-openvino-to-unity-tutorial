@@ -198,7 +198,7 @@ public class ImageClassifierOpenVINO : MonoBehaviour
     /// </summary>
     private void GetOpenVINOModels()
     {
-        // Get the paths for the .pt file for each model
+        // Get the paths for the XML file for each model
         foreach (string file in System.IO.Directory.GetFiles($"{Application.streamingAssetsPath}/{openvinoModelsDir}"))
         {
             if (file.EndsWith(".xml"))
